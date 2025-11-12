@@ -1,0 +1,200 @@
+/* frontend/src/App.css */
+
+/* Global Reset and Dark Background */
+:root {
+    /* Define primary dark colors */
+    --background: #594b9b; /* Purple base */
+    --foreground: #fafafa; /* White/Light Text */
+    --card: #9c7cd9; /* Card background - Lighter Purple */
+    --card-foreground: #ffffff;
+    --primary: #050512; /* Primary (text/accent) - Very dark blue */
+    --primary-foreground: #ffffff;
+    --accent: #27272a; /* Status area border/bg - Dark gray */
+    --accent-foreground: #fdfdfe; /* Subtitle color - Near white */
+    --destructive: #ef4444; /* Red 500 */
+}
+
+/* Make viewport a centering canvas */
+html, body, #root {
+    height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 40px 16px;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Center Alignment for the App Container */
+.app-container {
+    max-width: 800px;
+    /* Margin top/bottom is fine for spacing, auto ensures horizontal centering */
+    margin: 50px auto; 
+    padding: 40px;
+    background-color: var(--card);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.559); /* Stronger shadow for dark mode */
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--accent);
+}
+
+/* Headings and Subtitle */
+h1 {
+    color: var(--primary); 
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.subtitle {
+    color: var(--accent-foreground);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* Status and Loading */
+.status-area {
+    min-height: 50px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: var(--accent);
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+}
+
+.status-area p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.spinner {
+    border: 4px solid var(--accent);
+    border-top: 4px solid var(--primary); 
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Recorder Area and Buttons (Styled like shadcn/ui buttons) */
+.recorder-area {
+    margin-bottom: 40px;
+}
+
+.mic-instruction {
+    font-size: 0.85em;
+    color: var(--accent-foreground);
+    margin-top: 15px;
+}
+
+.control-button {
+    padding: 12px 28px;
+    margin: 0 10px;
+    border: 1px solid var(--accent-foreground); /* Subtle border */
+    border-radius: 6px; 
+    font-weight: bold;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.control-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    box-shadow: none;
+}
+
+.control-button.start {
+    background-color: var(--primary); /* Very dark blue */
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+}
+
+.control-button.stop {
+    background-color: var(--destructive); /* Red */
+    color: var(--primary-foreground);
+    border-color: var(--destructive);
+}
+
+.control-button.start:not(:disabled):hover {
+    background-color: #4f46e5; /* Darker Indigo (keeping this for nice hover effect) */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+}
+
+.control-button.stop:not(:disabled):hover {
+    background-color: #dc2626; /* Darker Red */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Transcript Box */
+.transcript-box {
+    text-align: left;
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--background);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.transcript-box h2 {
+    text-align: center;
+    color: var(--foreground);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.message {
+    margin: 20px 0;
+    padding: 15px 20px;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.user-message {
+    background-color: #1e293b; /* Slate 800 */
+    border-left: 5px solid var(--primary); /* Primary accent */
+    color: var(--foreground);
+}
+
+.bot-message {
+    background-color: #166534; /* Darker Green (Success tone) */
+    border-left: 5px solid #4ade80; /* Light Green Accent */
+    color: var(--foreground);
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.disclaimer {
+    margin-top: 40px;
+    font-size: 0.75em;
+    color: var(--accent-foreground);
+}
