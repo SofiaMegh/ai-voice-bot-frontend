@@ -233,7 +233,7 @@ function App() {
         </div>
       )}
 
-      <p className="disclaimer">✅ Final Stack: Node.js/Express, React/Vite, Gemini LLM, Browser Speech APIs.</p>
+      <p className="disclaimer">✅ The Interview Bot That Actually Listens.</p>
     </div>
   );
 }
