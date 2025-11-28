@@ -3,15 +3,15 @@
 /* Global Reset and Dark Background */
 :root {
     /* Define primary dark colors */
-    --background: #594b9b; /* Purple base */
-    --foreground: #fafafa; /* White/Light Text */
-    --card: #9c7cd9; /* Card background - Lighter Purple */
-    --card-foreground: #ffffff;
-    --primary: #050512; /* Primary (text/accent) - Very dark blue */
+    --background: #a43072; 
+    --foreground: #fafafa; 
+    --card: #340daa; 
+    --card-foreground: #9567f0;
+    --primary: #f573d2; 
     --primary-foreground: #ffffff;
-    --accent: #27272a; /* Status area border/bg - Dark gray */
-    --accent-foreground: #fdfdfe; /* Subtitle color - Near white */
-    --destructive: #ef4444; /* Red 500 */
+    --accent: #27272a; 
+    --accent-foreground: #fdfdfe; 
+    --destructive: #ef4444; 
 }
 
 /* Make viewport a centering canvas */
@@ -38,11 +38,10 @@ body {
 /* Center Alignment for the App Container */
 .app-container {
     max-width: 800px;
-    /* Margin top/bottom is fine for spacing, auto ensures horizontal centering */
     margin: 50px auto; 
     padding: 40px;
     background-color: var(--card);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.559); /* Stronger shadow for dark mode */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.559);
     border-radius: 12px;
     text-align: center;
     border: 1px solid var(--accent);
@@ -107,7 +106,7 @@ h1 {
 .control-button {
     padding: 12px 28px;
     margin: 0 10px;
-    border: 1px solid var(--accent-foreground); /* Subtle border */
+    border: 1px solid var(--accent-foreground);
     border-radius: 6px; 
     font-weight: bold;
     font-size: 1.05em;
@@ -124,25 +123,25 @@ h1 {
 }
 
 .control-button.start {
-    background-color: var(--primary); /* Very dark blue */
+    background-color: var(--primary);
     color: var(--primary-foreground);
     border-color: var(--primary);
 }
 
 .control-button.stop {
-    background-color: var(--destructive); /* Red */
+    background-color: var(--destructive);
     color: var(--primary-foreground);
     border-color: var(--destructive);
 }
 
 .control-button.start:not(:disabled):hover {
-    background-color: #4f46e5; /* Darker Indigo (keeping this for nice hover effect) */
+    background-color: #4f46e5;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
 }
 
 .control-button.stop:not(:disabled):hover {
-    background-color: #dc2626; /* Darker Red */
+    background-color: #dc2626;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
 }
@@ -176,14 +175,14 @@ h1 {
 }
 
 .user-message {
-    background-color: #1e293b; /* Slate 800 */
-    border-left: 5px solid var(--primary); /* Primary accent */
+    background-color: #3b0a5e;
+    border-left: 5px solid var(--primary);
     color: var(--foreground);
 }
 
 .bot-message {
-    background-color: #166534; /* Darker Green (Success tone) */
-    border-left: 5px solid #4ade80; /* Light Green Accent */
+    background-color: #6d0943; 
+    border-left: 5px solid #ee57a2; 
     color: var(--foreground);
 }
 
