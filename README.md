@@ -1,16 +1,108 @@
-# React + Vite
+# 🎨 Frontend Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend is a fully interactive **voice-driven AI interview UI**, running entirely in the browser with real-time speech input, speech output, interruption commands, and memory awareness.
 
-Currently, two official plugins are available:
+To keep everything fast and globally accessible, I deployed it on **Netlify**, while the backend runs on **Render**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎤 **1. Real-time Voice Interaction**
+- Start speaking anytime — the bot listens using browser SpeechRecognition.
+- The bot responds using high-quality browser TTS.
+- Automatic conversation looping (you talk ➝ bot replies ➝ listens again).
 
-## Expanding the ESLint configuration
+### 🛑 **2. Voice Interruption (Command Recognition)**
+You can interrupt the bot **mid-sentence** using your voice: Commands supported: 
+* **“stop”**
+* **“please stop”**
+* **“stop now”**
+* **“clear transcript”**
+* **“clear screen”**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The system instantly: 
+✔ Stops TTS 
+✔ Stops all recognizers 
+✔ Cancels pending operations 
+✔ Resets the loop and listens for the next question 
+✔ (If clear) wipes the entire transcript 
+
+Feels like a real smart assistant.
+
+### 🧠 **3. Short-Term Memory (Redis)**
+The bot remembers:
+- Your previous questions  
+- Its own previous answers  
+
+### 📚 **4. Long-Term Memory (Supabase)**
+The system extracts **stable candidate facts** from each turn and stores them as durable memory:
+- Skills  
+- Experience  
+- Goals  
+- Personal attributes  
+
+### 🔊 **5. Browser TTS with Natural Voice Selection**
+Auto-selects best available:
+- Google US English Female  
+- Samantha  
+- UK English Female  
+- Falls back to pitch-tuned default if needed.
+
+---
+
+# 🚀 Why Netlify (Frontend)?
+
+I chose **Netlify** because:
+
+* It’s insanely fast on a global CDN
+* Perfect for React builds
+* Zero-config deployment
+* Automatic HTTPS
+* No cold starts
+* Works beautifully with browser speech features
+
+Just push the build → Netlify serves it instantly.
+Perfect for a voice UI that needs low latency.
+
+---
+
+# 🚀 Why Render (Backend)?
+
+I used **Render** for the backend because:
+
+* It handles long-running Node processes better than serverless
+* No function timeouts
+* Stable TTS + LLM calls
+* Simple environment variable management
+* Easy auto-redeploy from GitHub
+
+Render keeps the API alive, while Netlify keeps the UI blazing fast.
+A clean, reliable pair.
+
+---
+
+# ⚡ Key Features (Short)
+
+* 🎤 **Real-time speech input** using browser SpeechRecognition
+* 🛑 **Voice interruption** — say “stop” or “clear” anytime
+* 🔁 **Speech → LLM → Speech loop**
+* 💾 **Short-term memory** (Redis)
+* 📚 **Long-term memory** (Supabase)
+* 🔊 **Smart TTS voice selection**
+* 🌍 **Fast, reliable deployment** using Render + Netlify
+
+---
+
+# 🔥 The Big Win
+
+By avoiding WebRTC and serverless complications, I built a **stable, browser-first architecture**:
+
+* Netlify serves the UI instantly
+* Render handles all backend logic
+* Browser handles all realtime voice work
+
+Simple, stable, scalable — and cheaper than any WebRTC-based setup.
+
+---
+
