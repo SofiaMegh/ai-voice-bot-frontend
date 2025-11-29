@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'http://localhost:3001/api/text-interview';
+const API_URL = 'https://ai-voice-bot-backend-g42v.onrender.com/api/text-interview';
 
 // Browser APIs
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
