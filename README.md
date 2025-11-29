@@ -22,11 +22,11 @@ You can interrupt the bot **mid-sentence** using your voice: Commands supported:
 * **“clear screen”**
 
 The system instantly: 
-✔ Stops TTS 
-✔ Stops all recognizers 
-✔ Cancels pending operations 
-✔ Resets the loop and listens for the next question 
-✔ (If clear) wipes the entire transcript 
+- ✔ Stops TTS 
+- ✔ Stops all recognizers 
+- ✔ Cancels pending operations 
+- ✔ Resets the loop and listens for the next question 
+- ✔ (If clear) wipes the entire transcript 
 
 Feels like a real smart assistant.
 
@@ -51,7 +51,7 @@ Auto-selects best available:
 
 ---
 
-# 🚀 Why Netlify (Frontend)?
+## 🚀 Why Netlify (Frontend)?
 
 I chose **Netlify** because:
 
@@ -67,7 +67,7 @@ Perfect for a voice UI that needs low latency.
 
 ---
 
-# 🚀 Why Render (Backend)?
+## 🚀 Why Render (Backend)?
 
 I used **Render** for the backend because:
 
@@ -82,19 +82,7 @@ A clean, reliable pair.
 
 ---
 
-# ⚡ Key Features (Short)
-
-* 🎤 **Real-time speech input** using browser SpeechRecognition
-* 🛑 **Voice interruption** — say “stop” or “clear” anytime
-* 🔁 **Speech → LLM → Speech loop**
-* 💾 **Short-term memory** (Redis)
-* 📚 **Long-term memory** (Supabase)
-* 🔊 **Smart TTS voice selection**
-* 🌍 **Fast, reliable deployment** using Render + Netlify
-
----
-
-# 🔥 The Big Win
+### 🔥 The Big Win
 
 By avoiding WebRTC and serverless complications, I built a **stable, browser-first architecture**:
 
