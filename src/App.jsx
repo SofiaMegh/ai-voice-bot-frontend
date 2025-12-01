@@ -95,7 +95,7 @@ function App() {
         setStatusText('Voice command "STOP" detected. Now listening for your question.');
         startRecording();
         
-      } else if (commandText.includes('clear screen') || commandText.includes('clear transcript')) {
+      } else if (commandText.includes('clear screen') || commandText.includes('clear transcript') || commandText.includes('clear')) {
         // Stop all voice recognition instances
         recognition.stop();
         commandRecognitionRef.current = null;
@@ -157,7 +157,7 @@ function App() {
 
       
       setLoading(false);
-      setStatusText('Answer received. Speaking now… (say "STOP" or "CLEAR SCREEN" to interrupt)');
+      setStatusText('Answer received. Speaking now… (say "STOP" or "CLEAR" to interrupt)');
 
       // Browser TTS setup
       const utterance = new SpeechSynthesisUtterance(answerText);
