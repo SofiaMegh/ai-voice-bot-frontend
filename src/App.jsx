@@ -157,7 +157,7 @@ function App() {
 
       
       setLoading(false);
-      setStatusText('Answer received. Speaking now… (say "STOP" or "CLEAR" to interrupt)');
+      setStatusText('Answer received. Speaking now… (say "STOP" or "CLEAR SCREEN" to interrupt)');
 
       // Browser TTS setup
       const utterance = new SpeechSynthesisUtterance(answerText);
